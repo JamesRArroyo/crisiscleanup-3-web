@@ -38,21 +38,21 @@ export default {
   computed: {
     lang() {
       return {
-        title: this.$t('~~Welcome to Crisis Cleanup Phone Center'),
-        detail: this.$t('~~Maybe some more detail?'),
+        title: this.$t('phoneGateway.welcome_to_phone_center'),
+        detail: this.$t('phoneGateway.system_intro'),
         steps: [
           {
-            title: this.$t('~~Step 1: Open er up!'),
-            body: this.$t('a more detailed explanation!'),
+            title: this.$t('phoneGateway.step_one'),
+            body: this.$t('phoneGateway.step_one_description'),
           },
           {
-            title: this.$t('~~Step 2: Do another thing!'),
-            body: this.$t('a more detailed explanation!'),
+            title: this.$t('phoneGateway.step_two'),
+            body: this.$t('phoneGateway.step_two_description'),
           },
         ],
         action: {
-          title: this.$t('~~Ready?'),
-          button: this.$t('~~Lets Do it!'),
+          title: this.$t('phoneGateway.ready_question'),
+          button: this.$t('actions.lets_do_it'),
         },
       };
     },
