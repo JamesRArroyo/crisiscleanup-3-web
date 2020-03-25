@@ -10,7 +10,7 @@
     <template #actions="slotProps">
       <div class="flex mr-2 justify-end w-full">
         <base-button
-          :text="$t('~~Approve')"
+          :text="$t('actions.approve')"
           variant="solid"
           size="small"
           class="mx-2"
@@ -21,7 +21,7 @@
           "
         />
         <base-button
-          :text="$t('~~Reject')"
+          :text="$t('actions.reject')"
           variant="outline"
           size="small"
           class="mx-2"
@@ -62,10 +62,8 @@ export default {
   methods: {
     async approveOrganization(organizationId) {
       const result = await responseDialog({
-        title: this.$t('~~Approve Organization'),
-        content: this.$t(
-          '~~Please provide a reason for approving this organization',
-        ),
+        title: this.$t('actions.approve_organization'),
+        content: this.$t('orgApprovalTable.give_approve_reason'),
       });
       if (result) {
         await Organization.api().approve(organizationId, result);
@@ -74,10 +72,8 @@ export default {
     },
     async rejectOrganization(organizationId) {
       const result = await responseDialog({
-        title: this.$t('~~Reject Organization'),
-        content: this.$t(
-          '~~Please provide a reason for rejecting this organization',
-        ),
+        title: this.$t('actions.reject_organization'),
+        content: this.$t('orgApprovalTable.give_reject_reason'),
       });
       if (result) {
         await Organization.api().reject(organizationId, result);
@@ -89,12 +85,12 @@ export default {
     return {
       columns: [
         {
-          title: this.$t('~~Name'),
+          title: this.$t('orgApprovalTable.name'),
           dataIndex: 'name',
           key: 'name',
         },
         {
-          title: this.$t('~~Website'),
+          title: this.$t('orgApprovalTable.website'),
           dataIndex: 'url',
           key: 'url',
         },
